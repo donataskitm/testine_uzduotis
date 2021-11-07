@@ -23,7 +23,7 @@ import { useLocation } from "react-router-dom";
                 }
                 else{
                     setOne(response); //saugom atsakyma i state reiksme, grazinancia irasus
-                    console.log(dataOne);
+                    //console.log(dataOne);
                     // alert(dataOne);
                 }
             }catch (error) {console.error(error);}

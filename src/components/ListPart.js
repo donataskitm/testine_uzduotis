@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {Button} from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import DetailPart from './DetailPart';
 import ItemPart from './ItemPart';
 
  function ListPart() {
@@ -25,7 +24,7 @@ import ItemPart from './ItemPart';
           }
           else{
             setAll(response);
-            console.log(dataAll);
+            //console.log(dataAll);
           }
 
       }catch (error) {console.error(error);}

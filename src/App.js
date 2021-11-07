@@ -8,8 +8,7 @@ import DetailPart from './components/DetailPart';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 function App() {
