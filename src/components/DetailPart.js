@@ -29,7 +29,7 @@ import { useLocation } from "react-router-dom";
             }catch (error) {console.error(error);}
         };
         fetchData();
-    }, []); //jei reiksme atsinaujins, bus vykdoma funkcija
+    }, [location]); //jei reiksme atsinaujins, bus vykdoma funkcija
 
     return (
     <div className="mx-auto">
