@@ -39,12 +39,12 @@ import ItemPart from './ItemPart';
             <table className="table ">
               <thead className="thead-light">
                 <tr>
-                  <th scope="col">Eil. nr.</th>
-                  <th scope="col">Vartotojo id</th>
-                  <th scope="col">id</th>
-                  <th scope="col">Pavadinimas</th>
-                  <th scope="col">Tekstas</th>
-                  <th scope="col"></th>
+                  <th>Eil. nr.</th>
+                  <th>Vartotojo id</th>
+                  <th>id</th>
+                  <th>Pavadinimas</th>
+                  <th>Tekstas</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>

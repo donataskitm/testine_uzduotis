@@ -33,7 +33,7 @@ import { useLocation } from "react-router-dom";
 
     return (
     <div className="mx-auto">
-        <Card style={{ width: '26rem' }} className="text-center mx-auto">
+        <Card style={{ width: '18rem' }} className="text-center mx-auto">
             <Card.Body className="d-flex flex-column ">
                 <Card.Title>Vartotojo id: {dataOne.userId}</Card.Title>
                 <Card.Text> ID: {dataOne.id}</Card.Text>

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button} from 'react-bootstrap';
+//import {Button} from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 
  function ItemPart(info) {
@@ -15,14 +15,14 @@ import { useHistory } from 'react-router-dom';
     }
 
     return (
-        <tr>
-            <th scope="row" key = {info.id}>{info.id}</th>
+        <tr onClick={redirect} style={{ cursor:'pointer' }}  >
+            <th key = {info.id}>{info.id}</th>
                 <td>{info.userId}</td>
                 <td>{info.id}</td>
                 <td>{info.title}</td>
                 <td>{info.body}</td>
                 <td>
-                <Button className="button" onClick={redirect} variant="primary"  active type="submit" >Plačiau</Button>
+                {/*  <Button className="button" onClick={redirect} variant="primary"  active type="submit" >Plačiau</Button>*/}
             </td>
         </tr>
     )
