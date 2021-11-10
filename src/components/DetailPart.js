@@ -49,18 +49,18 @@ import { useLocation } from "react-router-dom";
                         <React.Fragment>
                         <h4 className="text-center pb-3">VISI STRAIPSNIO DUOMENYS</h4> 
                         <Card style={{ width: '60%' }} className=" mx-auto">
-                        <Card.Header as="h5" className="text-uppercase text-center">{dataOne.title}</Card.Header>
-                        <Card.Body>
-                            <Card.Title>Apibendrinimas</Card.Title>
-                            <Card.Text className="text-left-card firstletter">{dataOne.body}</Card.Text>
-                            <Card.Text  className="text-left-card">Autoriaus ID: {dataOne.userId}, Straipsnio ID: {dataOne.id}</Card.Text>
-                        </Card.Body>
+                            <Card.Header as="h5" className="text-uppercase text-center">{dataOne.title}</Card.Header>
+                            <Card.Body>
+                                <Card.Title>Apibendrinimas</Card.Title>
+                                <Card.Text className="text-left-card firstletter">{dataOne.body}</Card.Text>
+                                <Card.Text  className="text-left-card">Autoriaus ID: {dataOne.userId}, Straipsnio ID: {dataOne.id}</Card.Text>
+                            </Card.Body>
                         </Card>
                         </React.Fragment>
                     )
                 ):(<div className="text-center mx-auto"><h4>{message}</h4></div> )}
                 <div className="pt-5">
-                    <Button variant="primary" onClick={() => history.goBack()} >Atgal</Button>
+                    <Button variant="success" onClick={() => history.goBack()} >Atgal</Button>
                 </div>
             </div>
         </Col>

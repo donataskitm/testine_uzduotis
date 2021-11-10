@@ -20,14 +20,14 @@ import {Button, Card, Row, Col} from 'react-bootstrap';
                                     <Card.Text >
                                         {work.description}
                                     </Card.Text>
-                                    <Button variant="primary" onClick={()=> window.open(work.butUrl, "_blank")} className = "btn mt-auto ">Žiūrėti</Button>
+                                    <Button variant="success" onClick={()=> window.open(work.butUrl, "_blank")} className = "btn mt-auto ">Žiūrėti</Button>
                                 </Card.Body>
                             </Card>
                         ))}
                     </React.Fragment>
                 </div>
                 <div className=" mt-4 text-center">
-                    <Button variant="primary" onClick={() => history.goBack()} >Atgal</Button>
+                    <Button variant="success" onClick={() => history.goBack()} >Atgal</Button>
                 </div>
             </Col>
         </Row>

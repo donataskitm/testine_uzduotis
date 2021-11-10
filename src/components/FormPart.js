@@ -74,7 +74,7 @@ import {Form, Button, Modal, Row, Col} from 'react-bootstrap';
                     </div>
                     <div className="row pt-3 d-flex">
                         <div className="text-center m-auto">
-                            <Button className="button"  variant="primary"  active type="submit">ĮRAŠYTI DUOMENIS</Button>
+                            <Button className="button"  variant="success"  active type="submit">ĮRAŠYTI DUOMENIS</Button>
                         </div>
                         <Modal
                             size="sm"

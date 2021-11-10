@@ -61,7 +61,7 @@ function ListPart() {
             )}
           </React.Fragment>
           <div className="text-center">
-        <Button className="button mt-4" onClick={redirect} variant="primary"  active type="submit">Pildyti</Button>
+        <Button className="button mt-4" onClick={redirect} variant="success"  active type="submit">Pildyti</Button>
         </div>
         </Col>
       </Row>

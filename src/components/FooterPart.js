@@ -4,7 +4,7 @@ import {Navbar, Container} from 'react-bootstrap'
  function FooterPart() {
     
     return (
-        <Row  className="component-last bg-secondary text-white align-items-center   justify-content-center" >
+        <Row  className="component-last bg-dark text-white align-items-center   justify-content-center" >
             <Col xs={12} md={3}> 
                 <Navbar  className="w-50 " bg="none" variant="dark">
                     <Container >
