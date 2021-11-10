@@ -73,7 +73,7 @@ import {Form, Button, Modal, Row, Col} from 'react-bootstrap';
                         onChange={(e)=>setText(e.target.value)}required/>
                     </div>
                     <div className="row pt-3 d-flex">
-                        <div className="text-center">
+                        <div className="text-center m-auto">
                             <Button className="button"  variant="primary"  active type="submit">ĮRAŠYTI DUOMENIS</Button>
                         </div>
                         <Modal
