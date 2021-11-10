@@ -17,7 +17,7 @@ const works = [
         butUrl: "https://github.com/donataskitm/json-movies",
     },
     {
-        name: "Portfilio svetainė",
+        name: "Portfolio svetainė",
         imageUrl:
         "/pic/cv.jpg",
         description:
