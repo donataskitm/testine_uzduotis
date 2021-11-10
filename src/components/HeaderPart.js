@@ -1,12 +1,15 @@
 import React from 'react'
+import { Row, Col } from 'react-bootstrap'
 
  function HeaderPart() {
     
     return (
-     <div className="bg-light text-dark  mb-5 p-2 text-center">
-        <h1> KVALIFIKACINĖ ATRANKOS UŽDUOTIS</h1>
-          <h2>Front-End Academy mokymams Present Connection įmonėje</h2>  
-      </div>
+     <Row className="component-first bg-light text-dark text-center py-4" >
+       <Col>
+          <h3> KVALIFIKACINĖ ATRANKOS UŽDUOTIS</h3>
+          <h4>Front-End Academy mokymams Present Connection įmonėje</h4> 
+        </Col> 
+      </Row>
     )
 }
 export default HeaderPart

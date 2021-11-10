@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react'
-import {Button} from 'react-bootstrap';
+import {Button, Col, Row, Spinner} from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import ItemPart from './ItemPart';
 
- function ListPart() {
+function ListPart() {
     
   const [dataAll, setAll] = useState([]); //saugoti irasams is json
-  let history = useHistory();
+  const history = useHistory();
+  const [isLoading, setIsLoading] = useState(false);
 
   const redirect = () => {
       history.push('/pildymas')
@@ -16,6 +17,7 @@ import ItemPart from './ItemPart';
   useEffect(() => {
     const fetchData = async () => {
       try{
+        setIsLoading(true);
         const URL = `https://jsonplaceholder.typicode.com/posts`;
         let res = await fetch(URL); 
         let response = await res.json();
@@ -24,6 +26,7 @@ import ItemPart from './ItemPart';
           }
           else{
             setAll(response);
+            setIsLoading(false);
             //console.log(dataAll);
           }
 
@@ -33,28 +36,35 @@ import ItemPart from './ItemPart';
   }, []); //jei reiksme atsinaujins, bus vykdoma funkcija
 
     return (
-      <div className="text-center ">
-        <h3>DUOMENYS</h3> 
-        <div className="justify-content-center pr-5 pl-5">
-            <table className="table ">
-              <thead className="thead-light">
-                <tr>
-                  <th>Eil. nr.</th>
-                  <th>Vartotojo id</th>
-                  <th>id</th>
-                  <th>Pavadinimas</th>
-                  <th>Tekstas</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-              {dataAll.map((info, index)=>(<ItemPart id={index} {...info}/>
-              ))}
-              </tbody>
-            </table>
+      <Row className="component-second" >
+        <Col>
+          <h4 className="text-center">STRAIPSNIŲ SĄRŠAS</h4> 
+          <React.Fragment>
+            {isLoading?(<div className="text-center mx-auto"><h4>Kraunama...</h4><Spinner animation="border"/></div>):(
+              <div>
+                <table className="m-auto table responsive table-fit">
+                  <thead className="thead-light">
+                    <tr>
+                      <th>Eil. nr.</th>
+                      <th>Autoriaus ID</th>
+                      <th>Straipsnio ID</th>
+                      <th className="text-center">Straipsnio pavadinimas</th>
+                      {/*<th>Tekstas</th>*/}
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {dataAll.map((info, index)=>(<ItemPart index={index} {...info}/>
+                  ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </React.Fragment>
+          <div className="text-center">
+        <Button className="button mt-4" onClick={redirect} variant="primary"  active type="submit">Pildyti</Button>
         </div>
-        <Button className="button" onClick={redirect} variant="primary"  active type="submit">Pildyti</Button>
-      </div>
+        </Col>
+      </Row>
     )
 }
 export default ListPart

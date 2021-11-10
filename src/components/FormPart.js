@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {useHistory} from "react-router-dom";
-import {Form, Button, Modal} from 'react-bootstrap';
+import {Form, Button, Modal, Row, Col} from 'react-bootstrap';
 
 
  function FormPart() {
@@ -56,39 +56,45 @@ import {Form, Button, Modal} from 'react-bootstrap';
     }
 
     return (
-        <div className="text-center">
-            <h3 className="mb-5"> ĮVESKITE DUOMENIS </h3> 
-            <Form className="m-auto w-50" onSubmit={handleSubmit}>
-            <div className="form-group row">
-                <div className="col-xs-12 col-md-4 p-xs-0 pl-md-0  ">
-                    <Form.Control type="number" min="1" className="form-control " placeholder="Įveskite vartotojo ID" value = {userId} onChange={(e)=>setUserID(e.target.value)} required/>
+        <Row className="component-second">
+            <Col>
+                <h4 className="mb-5 text-center"> ĮVESKITE STRAIPSNIO DUOMENIS </h4> 
+                <Form className="m-auto w-50" onSubmit={handleSubmit}>
+                    <div className="form-group row">
+                        <div className="col-xs-12 col-md-4 p-0 pt-3 ">
+                            <Form.Control type="number" min="1" className="form-control " placeholder="Įveskite vartotojo ID" value = {userId} onChange={(e)=>setUserID(e.target.value)} required/>
+                        </div>
+                        <div className="col-xs-12 col-md-8 p-0 pt-3">
+                        <   Form.Control type="text" className="form-control pt-ms-3" placeholder="Įveskite pavadinimą" value = {title} onChange={(e)=>setTitle(e.target.value)} required/>
+                        </div>
+                    </div>
+                    <div className="form-group row pt-3">
+                        <Form.Control className="form-control" as="textarea" rows={3} placeholder="Įveskite tekstą"  value = {body}
+                        onChange={(e)=>setText(e.target.value)}required/>
+                    </div>
+                    <div className="row pt-3 d-flex">
+                        <div className="text-center">
+                            <Button className="button"  variant="primary"  active type="submit">ĮRAŠYTI DUOMENIS</Button>
+                        </div>
+                        <Modal
+                            size="sm"
+                            show={smShow}
+                            onHide={() => setSmShow(false)}
+                            aria-labelledby="example-modal-sizes-title-sm"
+                        >
+                            <Modal.Header closeButton>
+                                <Modal.Title id="example-modal-sizes-title-sm">
+                                    Įrašas įterptas sėkmingai
+                                </Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>ID: {dataResponse.id}<br/>Vartotojo ID: {dataResponse.userId} <br/>Pavadinimas: {dataResponse.title} <br/>Tekstas: {dataResponse.body}<br/></Modal.Body>
+                        </Modal>
+                    </div>
+                </Form>
+                <div className="text-center">
+                    <Button className="text-center pt-1 m-4" variant="secondary"  onClick={() => history.goBack()} >Atgal</Button>{' '}
                 </div>
-                <div className="col-xs-12 col-md-8 mt-sm-0 pr-md-0 ">
-                <   Form.Control type="text" className="form-control " placeholder="Įveskite pavadinimą" value = {title} onChange={(e)=>setTitle(e.target.value)} required/>
-                </div>
-            </div>
-            <div className="form-group row ">
-                <Form.Control className="form-control" as="textarea" rows={3} placeholder="Įveskite tekstą"  value = {body}
-                onChange={(e)=>setText(e.target.value)}required/>
-            </div>
-            <div className="row pt-3 d-flex justify-content-center">
-                <Button className="button"  variant="primary"  active type="submit">ĮRAŠYTI DUOMENIS</Button>
-                <Modal
-                    size="sm"
-                    show={smShow}
-                    onHide={() => setSmShow(false)}
-                    aria-labelledby="example-modal-sizes-title-sm"
-                >
-                    <Modal.Header closeButton>
-                        <Modal.Title id="example-modal-sizes-title-sm">
-                            Įrašas įterptas sėkmingai
-                        </Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>ID: {dataResponse.id}<br/>Vartotojo ID: {dataResponse.userId} <br/>Pavadinimas: {dataResponse.title} <br/>Tekstas: {dataResponse.body}<br/></Modal.Body>
-                </Modal>
-            </div>
-            </Form>
-            <Button className="text-center pt-1 m-4" variant="secondary"  onClick={() => history.goBack()} >Atgal</Button>{' '}
-        </div>
+            </Col>
+        </Row>
 )}
 export default FormPart
