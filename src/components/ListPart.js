@@ -2,12 +2,16 @@ import React, {useState, useEffect} from 'react'
 import {Button, Col, Row, Spinner} from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import ItemPart from './ItemPart';
+import Pagination from './Pagination';
 
 function ListPart() {
-    
+
   const [dataAll, setAll] = useState([]); //saugoti irasams is json
   const history = useHistory();
   const [isLoading, setIsLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(12);
+
 
   const redirect = () => {
       history.push('/pildymas')
@@ -26,6 +30,7 @@ function ListPart() {
           }
           else{
             setAll(response);
+            
             setIsLoading(false);
             //console.log(dataAll);
           }
@@ -33,7 +38,14 @@ function ListPart() {
       }catch (error) {console.error(error);}
     };
     fetchData();
+    
   }, []); //jei reiksme atsinaujins, bus vykdoma funkcija
+  
+
+const indexOfLastPost= currentPage*postsPerPage;
+const indexofFirstPost = indexOfLastPost-postsPerPage;
+const currentPosts = dataAll.slice(indexofFirstPost, indexOfLastPost);
+const paginate = (pageNumber) =>setCurrentPage(pageNumber)
 
     return (
       <Row className="component-second" >
@@ -53,11 +65,15 @@ function ListPart() {
                     </tr>
                   </thead>
                   <tbody>
-                  {dataAll.map((info, index)=>(<ItemPart index={index} {...info}/>
+                  {currentPosts.map((info, index)=>(<ItemPart index={index} {...info}/>
                   ))}
                   </tbody>
                 </table>
+                <div className="m-4">
+                <Pagination postsPerPage={postsPerPage} totalPosts={dataAll.length} paginate={paginate} />
+                </div>
               </div>
+              
             )}
           </React.Fragment>
           <div className="text-center">
