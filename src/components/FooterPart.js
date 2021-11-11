@@ -4,9 +4,9 @@ import {Navbar, Container} from 'react-bootstrap'
  function FooterPart() {
     
     return (
-        <Row  className="component-last bg-dark text-white align-items-center   justify-content-center" >
-            <Col xs={12} md={3}> 
-                <Navbar  className="w-50 " bg="none" variant="dark">
+        <Row  className="component-last bg-dark text-white d-flex align-items-center justify-content-center " >
+            <Col xs={12} md={3} className=" d-flex align-items-center justify-content-center"> 
+                <Navbar   bg="none" variant="dark">
                     <Container >
                         <Navbar.Brand href="/">
                             Donatas Misiūnas
@@ -14,8 +14,8 @@ import {Navbar, Container} from 'react-bootstrap'
                     </Container>
                 </Navbar >
             </Col>
-            <Col xs={12} md={3} > 
-                <Navbar  className="w-50 " bg="none" variant="dark">
+            <Col xs={12} md={3} className=" d-flex align-items-center justify-content-center"> 
+                <Navbar bg="none" variant="dark">
                     <Container >
                         <Navbar.Brand href="/darbai">
                             Kiti darbai
@@ -23,8 +23,8 @@ import {Navbar, Container} from 'react-bootstrap'
                     </Container>
                 </Navbar >
             </Col>
-            <Col xs={12} md={3}> 
-                <Navbar className="w-50" bg="none" variant="dark">
+            <Col xs={12} md={3} className=" d-flex align-items-center justify-content-center"> 
+                <Navbar bg="none" variant="dark">
                     <Container >
                         <Navbar.Brand href="https://github.com/donataskitm" target="_blank">
                             GitHub
@@ -32,16 +32,17 @@ import {Navbar, Container} from 'react-bootstrap'
                     </Container>
                 </Navbar >
             </Col>
-            <Col xs={12} md={3}> 
-                <Navbar className="w-50" bg="none" variant="dark">
-                    <Container>
-                        <Navbar.Brand href="https://www.linkedin.com/in/donatas-m" target="_blank">
+            <Col xs={12} md={3} className="d-flex align-items-center justify-content-center"> 
+                <Navbar  bg="none" variant="dark">
+                    <Container >
+                        <Navbar.Brand className=" text-center" href="https://www.linkedin.com/in/donatas-m" target="_blank">
                             LinkedIn
                         </Navbar.Brand>
                     </Container>
                 </Navbar>
             </Col>   
         </Row>
+        
     )
 }
 export default FooterPart
