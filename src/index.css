@@ -34,14 +34,12 @@ table.table-fit tbody td, table.table-fit tfoot td {
   padding-bottom: 25px;
 }
 
-component-first {
+.component-first {
   min-height: 20vh;
-  background-color: #176156;
 }
 
-component-last {
-  min-height: 25vh;
-  padding-top: 25px;
+.component-last {
+  min-height: 10vh;
 }
 
 .text-left-card{
