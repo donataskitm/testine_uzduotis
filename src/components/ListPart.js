@@ -41,14 +41,14 @@ function ListPart() {
           <h4 className="text-center">STRAIPSNIŲ SĄRŠAS</h4> 
           <React.Fragment>
             {isLoading?(<div className="text-center mx-auto"><h4>Kraunama...</h4><Spinner animation="border"/></div>):(
-              <div>
-                <table className="m-auto table responsive table-fit">
+              <div >
+                <table className="m-auto table table-fit">
                   <thead className="thead-light">
-                    <tr>
+                    <tr className="text-center">
                       <th>Eil. nr.</th>
                       <th>Autoriaus ID</th>
                       <th>Straipsnio ID</th>
-                      <th className="text-center">Straipsnio pavadinimas</th>
+                      <th>Straipsnio pavadinimas</th>
                       {/*<th>Tekstas</th>*/}
                     </tr>
                   </thead>
@@ -61,8 +61,8 @@ function ListPart() {
             )}
           </React.Fragment>
           <div className="text-center">
-        <Button className="button mt-4" onClick={redirect} variant="success"  active type="submit">Pildyti</Button>
-        </div>
+            <Button className="button mt-4" onClick={redirect} variant="success"  active type="submit">Pildyti</Button>
+          </div>
         </Col>
       </Row>
     )
