@@ -65,7 +65,7 @@ import {Form, Button, Modal, Row, Col} from 'react-bootstrap';
                             <Form.Control type="number" min="1" className="form-control " placeholder="Įveskite vartotojo ID" value = {userId} onChange={(e)=>setUserID(e.target.value)} required/>
                         </div>
                         <div className="col-xs-12 col-md-8 p-0 pt-3">
-                        <   Form.Control type="text" className="form-control pt-ms-3" placeholder="Įveskite pavadinimą" value = {title} onChange={(e)=>setTitle(e.target.value)} required/>
+                        <   Form.Control type="text" className="form-control" placeholder="Įveskite pavadinimą" value = {title} onChange={(e)=>setTitle(e.target.value)} required/>
                         </div>
                     </div>
                     <div className="form-group row pt-3">
