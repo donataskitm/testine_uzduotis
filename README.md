@@ -10,4 +10,5 @@ Reikalingi endpoint’ai:
 
 Patobulinimai ateičiai:
 1. Optimizavimas, kad nereiktų kviesti kas kart API sugrįžus į komponentą pakartotinai.
+2. Straipsnių sąrašo puslapiavimas.
 
