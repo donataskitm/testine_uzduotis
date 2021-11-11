@@ -8,7 +8,7 @@ import {Navbar, Container} from 'react-bootstrap'
             <Col xs={12} md={3} className=" d-flex align-items-center justify-content-center"> 
                 <Navbar   bg="none" variant="dark">
                     <Container >
-                        <Navbar.Brand href="/">
+                        <Navbar.Brand>
                             Donatas Misiūnas
                         </Navbar.Brand>
                     </Container>
