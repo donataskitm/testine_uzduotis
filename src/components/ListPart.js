@@ -12,7 +12,6 @@ function ListPart() {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage, setPostsPerPage] = useState(12);
 
-
   const redirect = () => {
       history.push('/pildymas')
       window.scrollTo(0, 0);
@@ -34,7 +33,6 @@ function ListPart() {
             setIsLoading(false);
             //console.log(dataAll);
           }
-
       }catch (error) {console.error(error);}
     };
     fetchData();
@@ -45,7 +43,7 @@ function ListPart() {
 const indexOfLastPost= currentPage*postsPerPage;
 const indexofFirstPost = indexOfLastPost-postsPerPage;
 const currentPosts = dataAll.slice(indexofFirstPost, indexOfLastPost);
-const paginate = (pageNumber) =>setCurrentPage(pageNumber)
+const paginate = (pageNumber) =>setCurrentPage(pageNumber);
 
     return (
       <Row className="component-second" >
