@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom';
 import ItemPart from '../components/Item';
 import Pagination from '../components/Pagination';
 
-function ListPart() {
+function List() {
 
   const [dataAll, setDataAll] = useState([]);
   const history = useHistory();
@@ -78,4 +78,4 @@ function ListPart() {
       </Row>
     )
 }
-export default ListPart
+export default List

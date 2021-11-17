@@ -1,7 +1,7 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom';
 
- function ItemPart(info) {
+ function Item(info) {
     
     let history = useHistory();
     const redirect = () => {
@@ -20,4 +20,4 @@ import {useHistory} from 'react-router-dom';
         </tr>
     )
 }
-export default ItemPart
+export default Item

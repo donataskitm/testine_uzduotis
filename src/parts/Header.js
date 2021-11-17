@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
- function HeaderPart() {
+ function Header() {
     
     return (
      <Row className="component-first bg-success text-light text-center py-4"  >
@@ -15,4 +15,4 @@ import { Link } from 'react-router-dom'
       </Row>
     )
 }
-export default HeaderPart
+export default Header

@@ -3,7 +3,7 @@ import {Card, Button, Spinner, Row, Col} from 'react-bootstrap';
 import {useHistory} from "react-router-dom";
 import {useLocation} from "react-router-dom";
 
- function DetailPart()  {
+ function Detail()  {
 
     let history = useHistory();
     const [dataItem, setDataItem] = useState([]);
@@ -64,4 +64,4 @@ import {useLocation} from "react-router-dom";
     </Row>
     )
 }
-export default DetailPart
+export default Detail

@@ -3,7 +3,7 @@ import data from '../data/Works';
 import {useHistory} from "react-router-dom";
 import {Button, Card, Row, Col} from 'react-bootstrap';
 
- function WorksPart() {
+ function Works() {
     let history = useHistory();
 
     return (
@@ -33,4 +33,4 @@ import {Button, Card, Row, Col} from 'react-bootstrap';
         </Row>
     )
 }
-export default WorksPart
+export default Works

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import {Navbar, Container} from 'react-bootstrap'
- function FooterPart() {
+ function Footer() {
     
     return (
         <Row  className="component-last bg-dark text-white d-flex align-items-center justify-content-center " >
@@ -26,7 +26,7 @@ import {Navbar, Container} from 'react-bootstrap'
             <Col xs={12} md={3} className=" d-flex align-items-center justify-content-center"> 
                 <Navbar bg="none" variant="dark">
                     <Container >
-                        <Navbar.Brand href="https://github.com/donataskitm" target="_blank">
+                        <Navbar.Brand href="https://github.com/donataskitm/testine_uzduotis" target="_blank">
                             GitHub
                         </Navbar.Brand>
                     </Container>
@@ -45,4 +45,4 @@ import {Navbar, Container} from 'react-bootstrap'
         
     )
 }
-export default FooterPart
+export default Footer

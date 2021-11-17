@@ -2,58 +2,43 @@ import React, {useState} from 'react'
 import {useHistory} from "react-router-dom";
 import {Form, Button, Modal, Row, Col} from 'react-bootstrap';
 
-
- function FormPart() {
+ function FormApi() {
     let history = useHistory();
-
-    const [userId, setUserID] = useState('');
-    const [title, setTitle] = useState('');
-    const [body, setText] = useState('');
-    const [dataResponse, setResponse] = useState('');
-
-    const [smShow, setSmShow] = useState(false);
-    const formData = {userId, title, body}
+    const [state, setState] = useState({
+        userId: "",
+        title: "",
+        body: "",
+        smShow: false,
+        dataResponse: '',
+      })
     const API_URL = process.env.REACT_APP_API_URL;
 
+    const handleChange = evt => {
+        const name = evt.target.name;
+        const value = evt.target.value;
+        setState({...state, [name]: value});
+      }
+
     const handleSubmit = (e) => {
-
-    const requestOptions = {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(formData)
-    };
-
-    e.preventDefault();
-        if(userId.length > 4){
-            alert('Įveskite vartotojo ID su mažesniu skaičiumi');
-            return;
-        }
-        if(title.length < 5 || title.length >500){
-            alert('Įveskite pavadinimą ne trumpesnį nei 5 ir ne ilgesnį  nei 500 tekstą');
-            return;
-        }
-        if(body.length < 10 || body.length >1500){
-            alert('Įveskite tekstą ne trumpesnį nei 10 ir ne ilgesnį  nei 1500 tekstą');
-            return;
-        }
+        const requestOptions = {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(state)
+        };
+        e.preventDefault();
        
         fetch(API_URL, requestOptions)
             .then(async response => {
                 const isJson = response.headers.get('content-type')?.includes('application/json');
                 const data = isJson && await response.json();
-   
                 if (!response.ok) {
                     const error = (data && data.message) || response.status;
                     return Promise.reject(error);
                 }
-                setSmShow(true);
-                setResponse(data);
-                setUserID('');
-                setTitle('');
-                setText('');
+                setState({...state, title: '', body: '', userId: '', smShow: true, dataResponse: data, });
             })
             .catch(error => {
-                alert(error.message);;
+                alert(error.message);
             });      
     }
 
@@ -64,15 +49,15 @@ import {Form, Button, Modal, Row, Col} from 'react-bootstrap';
                 <Form className="m-auto w-50" onSubmit={handleSubmit}>
                     <div className="form-group row">
                         <div className="col-xs-12 col-md-4 p-0 pt-3 ">
-                            <Form.Control type="number" min="1" className="form-control " placeholder="Įveskite vartotojo ID" value = {userId} onChange={(e)=>setUserID(e.target.value)} required/>
+                            <Form.Control type="number" name="userId" min="1" className="form-control " placeholder="Įveskite vartotojo ID" value={state.userId} onChange={handleChange} required/>
                         </div>
                         <div className="col-xs-12 col-md-8 p-0 pt-3">
-                        <   Form.Control type="text" className="form-control" placeholder="Įveskite pavadinimą" value = {title} onChange={(e)=>setTitle(e.target.value)} required/>
+                        <   Form.Control type="text" name="title" className="form-control" placeholder="Įveskite pavadinimą" value={state.title} onChange={handleChange} required/>
                         </div>
                     </div>
                     <div className="form-group row pt-3">
-                        <Form.Control className="form-control" as="textarea" rows={3} placeholder="Įveskite tekstą"  value = {body}
-                        onChange={(e)=>setText(e.target.value)}required/>
+                        <Form.Control className="form-control" name="body" type="textarea"  as="textarea" rows={3} placeholder="Įveskite tekstą"  value={state.body}
+                        onChange={handleChange}required/>
                     </div>
                     <div className="row pt-3 d-flex">
                         <div className="text-center m-auto">
@@ -80,8 +65,9 @@ import {Form, Button, Modal, Row, Col} from 'react-bootstrap';
                         </div>
                         <Modal
                             size="sm"
-                            show={smShow}
-                            onHide={() => setSmShow(false)}
+                           
+                            show={state.smShow}
+                            onHide={() => setState({...state, smShow: false})}
                             aria-labelledby="example-modal-sizes-title-sm"
                         >
                             <Modal.Header closeButton>
@@ -89,7 +75,7 @@ import {Form, Button, Modal, Row, Col} from 'react-bootstrap';
                                     Įrašas įterptas sėkmingai
                                 </Modal.Title>
                             </Modal.Header>
-                            <Modal.Body>ID: {dataResponse.id}<br/>Vartotojo ID: {dataResponse.userId} <br/>Pavadinimas: {dataResponse.title} <br/>Tekstas: {dataResponse.body}<br/></Modal.Body>
+                            <Modal.Body>ID: {state.dataResponse['id']}<br/>Vartotojo ID: {state.dataResponse['userId']} <br/>Pavadinimas: {state.dataResponse['title']} <br/>Tekstas: {state.dataResponse['body']}<br/></Modal.Body>
                         </Modal>
                     </div>
                 </Form>
@@ -99,4 +85,4 @@ import {Form, Button, Modal, Row, Col} from 'react-bootstrap';
             </Col>
         </Row>
 )}
-export default FormPart
+export default FormApi

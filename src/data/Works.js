@@ -1,6 +1,14 @@
 const works = [
     
-    {
+  {
+    name: "Atrankos užduotis",
+    imageUrl:
+    "/pic/test.jpg",
+    description:
+      "Present Connection užduotis. Straipsnių skaitymas iš JSON failo. React + Bootstrap. ",
+      butUrl: "https://github.com/donataskitm/testine_uzduotis",
+  },
+  {
       name: "Straipsniai",
       imageUrl:
       "/pic/fetch.jpg",
