@@ -17,8 +17,8 @@ Visur kartojasi šitas, būtų gerai apjungti.
 + Yra komentuoto kodo (pataisyta).
 + dataOne, reiktų geresnio pavadinimo (pataisyta).
 - handleSubmit funkcija atrodo per didelė, reiktų paskaidyti.
-- setUserID, handleChangeTitle, setTitle ir t.t būtų galima apjungit į vieną metodą ir naudoti event.target.name bei value, tada ir state būtų saugojamas
-objektas.
++ setUserID, handleChangeTitle, setTitle ir t.t būtų galima apjungit į vieną metodą ir naudoti event.target.name bei value, tada ir state būtų saugojamas
+objektas (pataisyta).
 
 # Getting Started with Create React App
 
